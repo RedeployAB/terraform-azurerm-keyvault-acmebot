@@ -14,4 +14,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- Version reference -->
 
-[0.0.1]: https://github.com/RedeployAB/terraform-azure-keyvault-acmebot/releases/tag/v0.0.1
+[0.0.1]: https://github.com/RedeployAB/terraform-azurerm-keyvault-acmebot/releases/tag/v0.0.1
