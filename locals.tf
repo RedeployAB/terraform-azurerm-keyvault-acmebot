@@ -9,5 +9,4 @@ locals {
   auth_callback_urls        = ["${local.function_app_url}/.auth/login/aad/callback"]
   token_issuer_url          = "https://login.microsoftonline.com/${data.azurerm_client_config.current.tenant_id}/v2.0"
   function_app_url          = "https://${lower(local.function_app_name)}.azurewebsites.net"
-  resource_tags             = merge((var.inherit_resource_group_tags ? data.azurerm_resource_group.acmebot.tags : {}), var.resource_tags)
 }

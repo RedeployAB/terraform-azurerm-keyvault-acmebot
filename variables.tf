@@ -20,17 +20,11 @@ variable "location" {
   default     = ""
 }
 
-variable "resource_tags" {
+variable "tags" {
   type        = map(string)
   description = "Tags that should be applied to the deployed resources."
   default     = {}
 }
-
-variable "inherit_resource_group_tags" {
-  type        = bool
-  description = "Enables or disables resource group tag inherition."
-  default     = false
-} 
 
 variable "function_app_name" {
   type        = string
@@ -96,7 +90,7 @@ variable "acme_mail_address" {
 
 variable "acme_endpoint" {
   type        = string
-  description = "ACME endpoint used for issuing certificates."
+  description = "ACME endpoint used for issuing certificates. Defaults to Lets Encrypt."
   default     = "https://acme-v02.api.letsencrypt.org/"
 }
 

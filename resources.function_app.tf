@@ -21,7 +21,7 @@ resource "azurerm_application_insights" "acmebot" {
   retention_in_days    = 30
   disable_ip_masking   = true
 
-  tags = local.resource_tags
+  tags = var.tags
 }
 
 ## Azure AD auth (function access)
@@ -105,7 +105,7 @@ resource "azurerm_function_app" "acmebot" {
     type = "SystemAssigned"
   }
 
-  tags = local.resource_tags
+  tags = var.tags
 }
 
 resource "azurerm_app_service_plan" "acmebot" {
@@ -119,7 +119,7 @@ resource "azurerm_app_service_plan" "acmebot" {
     size = "Y1"
   }
 
-  tags = local.resource_tags
+  tags = var.tags
 }
 
 resource "azurerm_storage_account" "acmebot" {
@@ -134,11 +134,11 @@ resource "azurerm_storage_account" "acmebot" {
   min_tls_version           = "TLS1_2"
   allow_blob_public_access  = false
 
-  tags = local.resource_tags
+  tags = var.tags
 }
 
 ## Azure DNS zone role assignment
-resource "azurerm_role_assignment" "acmebot" {
+resource "azurerm_role_assignment" "dns_zone" {
   count = length(var.dns_zone_ids)
 
   scope                = var.dns_zone_ids[count.index]
