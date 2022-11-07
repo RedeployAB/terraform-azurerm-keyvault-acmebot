@@ -1,3 +1,7 @@
+> **Note**
+>
+> This module has been deprecated in favor of the [official Terraform module](https://registry.terraform.io/modules/shibayan/keyvault-acmebot/azurerm/latest).
+
 # Terraform Key Vault Acmebot
 
 Terraform module of [@shibayan](https://github.com/shibayan)'s automated ACME issuer [Key Vault Acmebot](https://github.com/shibayan/keyvault-acmebot).
